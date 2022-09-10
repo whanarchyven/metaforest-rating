@@ -166,12 +166,12 @@ const Home: NextPage = () => {
                     <div className={'w-4/5 h-4/5 grid gap-x-2 sm:gap-x-10 items-end grid-cols-10'}>
                         {users.map((item,counter)=>{
                             if(counter<10){
-                                return <div className={'transition-all duration-1000 ease-in-out green-gradient rounded-t-full w-full relative justify-center flex-wrap flex p-2 items-start'} style={{height:(3+counter)*10+'%'}} key={item.telegram_id+counter}>
+                                return <div className={'transition-all duration-1000 ease-in-out green-gradient rounded-t-full w-full relative justify-center flex-wrap flex p-2 items-start'} style={{height:(12-counter)*10+'%'}} key={item.telegram_id+counter}>
                                     <div className={'w-16 h-16 bg-black rounded-full'}>
                                         <img src={'images/bunnies/'+item.image+'.png'} className={'w-full h-full object-cover rounded-full'}/>
                                     </div>
                                     <p className={'font-bold text-sm bg-white p-2 absolute z-50 top-24'}>{item.telegram_id}</p>
-                                    <p className={'font-bold text-2xl p-2'}>{(10-(counter))}</p>
+                                    <p className={'font-bold text-2xl p-2'}>{(counter+1)}</p>
                                 </div>
                             }
                         })}
@@ -189,7 +189,7 @@ const Home: NextPage = () => {
                             <p className={'text-white text-xs sm:text-xl'}>{currentTab}</p>
                         </div>
                     </div>
-                    {reversing().map((item,counter)=>{
+                    {users.map((item,counter)=>{
                         return <div className={'grid grid-cols-3 items-center w-full border-b-2 border-white'} key={item.telegram_id+counter}>
                             <div className={'col-span-1 p-2 border-white h-full flex justify-center relative items-center'}>
                                 <img src={'images/bunnies/'+item.image+'.png'} className={'w-20 h-20 object-cover rounded-full'}/>
